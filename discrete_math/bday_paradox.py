@@ -1,10 +1,15 @@
-#!/usr/bin/python
+#!/usr/bin/env python 
 
 import random
 import collections
+import pandas as pd
+import matplotlib.pyplot as plt
 
 
 def bday_paradox(j, k):
+
+	output_list = []
+
 	for i in range(1, k + 1):
 
 		num_repeat_bdays = 0
@@ -20,6 +25,16 @@ def bday_paradox(j, k):
 				num_repeat_bdays += 1
 
 
-		print (i, float(num_repeat_bdays) / j)
+		output_list.append([i, float(num_repeat_bdays) / j])
 
-print bday_paradox(10000, 25)
+		print i
+	return output_list
+
+bday = pd.DataFrame(bday_paradox(5000, 100))
+
+x = bday[0]
+y = bday[1]
+
+plt.plot(x, y, 'o', color='black');
+
+plt.show()
