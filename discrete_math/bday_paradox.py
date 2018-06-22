@@ -30,7 +30,7 @@ def bday_paradox(j, k):
 		print i
 	return output_list
 
-bday = pd.DataFrame(bday_paradox(5000, 100))
+bday = pd.DataFrame(bday_paradox(5000, 50))
 
 x = bday[0]
 y = bday[1]
